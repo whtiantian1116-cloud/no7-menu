@@ -20,6 +20,13 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .tabs .tab{border-color:#51414e88;background:#17151b}
 .tabs .tab.active{background:#ed78a2;border-color:#ed78a2;color:#1d1019;box-shadow:0 4px 26px #e75e9633}
 .vip{background:linear-gradient(115deg,#241822,#16131b);border-color:#aa6a8152;box-shadow:0 30px 90px #0006}
+.vip-image{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#0c0a10}
+.vip-preview{position:relative;min-width:0;padding:0;border:0;overflow:hidden;background:#241824;color:white;text-align:center}
+.vip-preview img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .35s,filter .35s}
+.vip-preview:hover img{transform:scale(1.05);filter:brightness(1.08)}
+.vip-preview span{position:absolute;bottom:0;left:0;right:0;padding:22px 8px 12px;background:linear-gradient(transparent,#150d18ec);font-size:13px;font-weight:900;text-shadow:0 1px 10px #000}
+.vip-actions{display:flex;gap:12px;flex-wrap:wrap}
+.vip-actions .secondary{font-size:13px;padding:15px 20px}
 .steps>div{background:#17131b}
 .steps{background:#4a374466;border-color:#4a374466}
 .overlay{background:#08060bdc;backdrop-filter:blur(18px) saturate(.7);transition:opacity .3s}
