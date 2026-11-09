@@ -1,0 +1,37 @@
+/* 柒号社 V5：克制的暗色舞台，精致的动态交互 */
+:root{--bg:#0c0b10;--pink:#f36b9d;--ink:#f7f0ee;--muted:#a99fa8}
+.grain{display:none}
+body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparent 85%),linear-gradient(180deg,#0c0b10,#100e14 45%,#0c0b10);background-attachment:fixed}
+.hero{background:radial-gradient(ellipse at 82% 49%,#46273e4d,transparent 48%),linear-gradient(130deg,#101016,#17131c 58%,#0d0c12)}
+.hero:before{color:#ffffff03;font-weight:800;opacity:.42}
+.hero:after{background:none;content:none}
+.hero-glow{background:#c73a7820;filter:blur(150px);opacity:.44}
+.ticker{transform:none;background:linear-gradient(90deg,#df6492,#ff90b4,#df6492);box-shadow:0 7px 35px #dc58931c}
+.hero-character{border:1px solid #ffbadc50;box-shadow:0 25px 80px #0008,0 0 0 10px #ffffff05;transform:rotate(-2deg)}
+.hero-character:after{box-shadow:inset 0 0 55px #130d1699}
+.hero-character-label{background:#110d17db}
+.card{background:linear-gradient(135deg,#1d1820,#151218);border-color:#ffffff1f;transform-style:preserve-3d;position:relative;isolation:isolate;will-change:transform}
+.card:hover{border-color:#f68faf88;box-shadow:0 32px 60px #0008,0 0 0 1px #ed7ca333;transform:translateY(-11px) perspective(1100px) rotateX(2deg)}
+.card-pic:after{background:linear-gradient(transparent 48%,#13101bdc)}
+.card-pic img{filter:saturate(.86);transition:transform .65s cubic-bezier(.2,.7,.16,1),filter .55s}
+.card-empty{cursor:default;pointer-events:none;opacity:.55}.card-pic-empty{background:#17121d}.card-pic-empty:after{display:none}
+.card:hover .card-pic img{filter:saturate(1.12);transform:scale(1.075)}
+.card-bottom{background:#17131a}
+.tabs .tab{border-color:#51414e88;background:#17151b}
+.tabs .tab.active{background:#ed78a2;border-color:#ed78a2;color:#1d1019;box-shadow:0 4px 26px #e75e9633}
+.vip{background:linear-gradient(115deg,#241822,#16131b);border-color:#aa6a8152;box-shadow:0 30px 90px #0006}
+.steps>div{background:#17131b}
+.steps{background:#4a374466;border-color:#4a374466}
+.overlay{background:#08060bdc;backdrop-filter:blur(18px) saturate(.7);transition:opacity .3s}
+.poster-window{transform-origin:50% 60%;animation:panel-enter .58s cubic-bezier(.16,1,.22,1) both;box-shadow:0 40px 120px #000d,0 0 65px #f26c9a15;overflow:hidden}
+.poster-window:before{content:"";position:absolute;left:-120%;top:0;bottom:0;width:42%;z-index:2;background:linear-gradient(90deg,transparent,#ff9cb01c,transparent);transform:skewX(-18deg);pointer-events:none;animation:sheen 1s .12s ease-out both}
+.poster-scroll img{animation:poster-reveal .66s cubic-bezier(.16,1,.22,1) both}
+.poster-window .modal-head{background:linear-gradient(95deg,#321e2d,#17141e);border-color:#76506770}
+.poster-window .poster-scroll{background:#111016}
+@keyframes panel-enter{0%{opacity:.45;transform:translateY(46px) scale(.925);filter:blur(8px)}65%{filter:blur(0)}100%{opacity:1;transform:none;filter:none}}
+@keyframes poster-reveal{0%{opacity:0;clip-path:inset(0 0 88% 0);transform:scale(1.045)}45%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0);transform:scale(1)}}
+@keyframes sheen{0%{left:-120%;opacity:0}30%{opacity:1}100%{left:150%;opacity:0}}
+.poster-window.exiting{animation:panel-exit .28s ease-in both}
+@keyframes panel-exit{to{opacity:0;transform:translateY(26px) scale(.965);filter:blur(4px)}}
+@media(max-width:600px){.hero-character{transform:rotate(5deg)}.card:hover{transform:none}.poster-window{animation-duration:.42s}.poster-scroll img{animation-duration:.45s}}
+@media(prefers-reduced-motion:reduce){.poster-window,.poster-scroll img,.poster-window:before{animation:none!important}.card{will-change:auto}}
