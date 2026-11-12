@@ -1,6 +1,6 @@
 const menus=[
 ['限时·夺取大红砖','限时单','limited-redbrick.webp','11.12—11.26 · 限定活动'],
-['超值体验单','限时单','limited-experience.webp','127R 起 · 每版本每周限一单'],
+['限时·超值体验单','限时单','limited-experience.webp','127R 起 · 每版本每周限一单'],
 ['基础护航与体验单','基础护航与体验单','basic.webp','基础体验 · 小时陪玩'],
 ['百亿补贴','趣味单','billion.webp','477 / 577 包亿'],
 ['千万以上','趣味单','ten-million.webp','677R · 保1000W'],
