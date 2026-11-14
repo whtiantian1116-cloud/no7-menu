@@ -50,3 +50,8 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .tabs .tab.limited-tab{border:1px solid #ff8066;background:linear-gradient(130deg,#4a1824,#27131d);color:#ffe3bb;box-shadow:inset 0 0 0 1px #f57c5525}.tabs .tab.limited-tab.active{background:linear-gradient(110deg,#ff7356,#ffd093);color:#35141b;border-color:#ffc78d}.limited-tab small{font-size:8px;margin-left:4px;background:#ff6b58;color:#fff;padding:2px 4px;border-radius:2px}.tabs .tab.limited-tab.active small{background:#56202a}
 .card.limited-card{border-color:#e87565;box-shadow:0 0 0 1px #d9614d33,0 12px 38px #ea4b4720}.limited-card .card-number{background:#ed553a;color:white}.limited-card .card-number b{color:#fff}
 @media(max-width:600px){.limited-feature{padding:20px 17px;flex-direction:column;align-items:stretch;gap:15px}.limited-feature:after{font-size:80px;right:-15px;top:-12px}.limited-copy strong{font-size:26px}.limited-cta{width:100%;text-align:center;padding:13px}}
+
+/* 主播同款标识：仅用于绝密快递站预览卡片 */
+.streamer-badge{position:absolute;top:18px;left:18px;z-index:3;padding:8px 13px;background:linear-gradient(110deg,#f05291,#ffc47d);color:#281019;border:1px solid #ffe4bd;font-size:12px;font-weight:950;letter-spacing:1px;box-shadow:0 5px 18px #0008;clip-path:polygon(0 0,92% 0,100% 28%,100% 100%,8% 100%,0 72%)}
+.streamer-card .card-number{top:58px}
+@media(max-width:600px){.streamer-badge{top:9px;left:9px;padding:6px 9px;font-size:10px}.streamer-card .card-number{top:40px}}

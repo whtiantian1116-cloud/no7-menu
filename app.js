@@ -2,22 +2,32 @@ const menus=[
 ['限时·夺取大红砖','限时单','limited-redbrick.webp','11.12—11.26 · 限定活动'],
 ['限时·超值体验单','限时单','limited-experience.webp','127R 起 · 每版本每周限一单'],
 ['基础护航与体验单','基础护航与体验单','basic.webp','基础体验 · 小时陪玩'],
-['百亿补贴','趣味单','billion.webp','477 / 577 包亿'],
-['千万以上','趣味单','ten-million.webp','677R · 保1000W'],
-['药药切克闹','趣味单','medicine.webp','止疼药挑战 · 477R 起'],
-['左轮一响，黄金万两','趣味单','revolver.webp','六发定乾坤 · 327R 起'],
-['黄金矿工','趣味单','gold-miner.webp','青铜 / 白银 / 黄金'],
-['神偷沙色','趣味单','sand.webp','巴别塔夺金行动'],
 ['唐王骰子','趣味单','dice.webp','骰子摇摇摇'],
-['真·一命通关','趣味单','one-life.webp','标准 / PRO MAX'],
+['左轮一响，黄金万两','趣味单','revolver.webp','六发定乾坤 · 327R 起'],
+['神偷沙色','趣味单','sand.webp','巴别塔夺金行动'],
+['百亿补贴','趣味单','billion.webp','477 / 577 包亿'],
+['药药切克闹','趣味单','medicine.webp','止疼药挑战 · 477R 起'],
+['黄金矿工','趣味单','gold-miner.webp','青铜 / 白银 / 黄金'],
 ['板板步步高升','趣味单','step.webp','逐级挑战'],
-['逃学威龙','趣味单','escape.webp','航天基地主题'],
 ['绝密快递站','趣味单','delivery.webp','绝密配送 · 包裹挑战'],
-['超级·小小巨人','趣味单','giant.webp','三档规格'],
+['千万以上','趣味单','ten-million.webp','677R · 保1000W'],
 ['航天黑洞','趣味单','blackhole.webp','非黑洞撤离'],
+['逃学威龙','趣味单','escape.webp','航天基地主题'],
+['超级·小小巨人','趣味单','giant.webp','三档规格'],
+['真·一命通关','趣味单','one-life.webp','标准 / PRO MAX'],
 ['S12赛季·微光 3×3价目表','3×3专区','s12-3x3.webp','33代做 / 33陪做']
 ];const $=id=>document.getElementById(id);let category='全部菜单',current=0,lastFocus=null,vipMode=false;const cats=['全部菜单','限时单','基础护航与体验单','趣味单','3×3专区'];const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2];
-function render(){ $('tabs').innerHTML=cats.map(c=>'<button class="tab '+(c===category?'active':'')+(c==='限时单'?' limited-tab':'')+'" data-cat="'+c+'" aria-pressed="'+(c===category)+'">'+(c==='限时单'?'🔥 ':'')+c+(c==='限时单'?' <small>HOT</small>':'')+'</button>').join('');$('grid').innerHTML=menus.map((m,i)=>({m,i})).filter(x=>category==='全部菜单'||x.m[1]===category).map(({m,i})=>'<button class="card '+(m[1]==='限时单'?'limited-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单"><div class="card-pic"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报"><div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(i+1).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div><div class="card-bottom"><div><small>'+m[1]+' · '+m[3]+'</small><h3>'+m[0]+'</h3></div><b>↗</b></div></button>').join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{category=b.dataset.cat;render()});document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>openPoster(Number(b.dataset.i)))}function lock(v){document.body.classList.toggle('locked',v)}
+function render(){
+ $('tabs').innerHTML=cats.map(c=>'<button class="tab '+(c===category?'active':'')+(c==='限时单'?' limited-tab':'')+'" data-cat="'+c+'" aria-pressed="'+(c===category)+'">'+(c==='限时单'?'🔥 ':'')+c+(c==='限时单'?' <small>HOT</small>':'')+'</button>').join('');
+ const visible=menus.map((m,i)=>({m,i})).filter(x=>category==='全部菜单'||x.m[1]===category);
+ $('grid').innerHTML=visible.map(({m,i})=>{
+  const number=m[1]==='趣味单'?menus.slice(0,i+1).filter(x=>x[1]==='趣味单').length:i+1;
+  const streamer=m[2]==='delivery.webp';
+  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单"><div class="card-pic"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div><div class="card-bottom"><div><small>'+m[1]+' · '+m[3]+'</small><h3>'+m[0]+'</h3></div><b>↗</b></div></button>';
+ }).join('');
+ document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{category=b.dataset.cat;render()});
+ document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>openPoster(Number(b.dataset.i)));
+}function lock(v){document.body.classList.toggle('locked',v)}
 function openRules(){lastFocus=document.activeElement;$('rulesModal').classList.remove('hidden');$('rulesContent').scrollTop=0;lock(true);$('rulesAccept').focus()}function closeRules(accepted){$('rulesModal').classList.add('hidden');lock(false);if(accepted)sessionStorage.setItem('no7_rules','read');lastFocus?.focus?.()}
 function openPoster(i){const alreadyOpen=!$('posterModal').classList.contains('hidden');if(!alreadyOpen)lastFocus=document.activeElement;vipMode=false;$('prev').hidden=false;$('next').hidden=false;current=(i+menus.length)%menus.length;const m=menus[current];$('posterCount').textContent='MISSION '+String(current+1).padStart(2,'0')+' / '+menus.length;$('posterTitle').textContent=m[0];$('posterImg').src=img(m);$('posterImg').alt='柒号社电竞 '+m[0]+' 正式菜单完整海报';$('posterModal').classList.remove('hidden');$('posterScroll').scrollTop=0;const panel=$('posterModal').querySelector('.poster-window');panel.classList.remove('exiting');if(!alreadyOpen){panel.style.animation='none';void panel.offsetWidth;panel.style.animation=''}else{const picture=$('posterImg');picture.style.animation='none';void picture.offsetWidth;picture.style.animation=''}lock(true);$('posterClose').focus()}function openSpecial(title,filename){lastFocus=document.activeElement;vipMode=true;$('prev').hidden=true;$('next').hidden=true;$('posterCount').textContent='MEMBERSHIP / BENEFITS';$('posterTitle').textContent=title;$('posterImg').src='./assets/'+filename;$('posterImg').alt='柒号社 '+title+' 完整海报';$('posterModal').classList.remove('hidden');$('posterScroll').scrollTop=0;lock(true);$('posterClose').focus()}const openVip=()=>openSpecial('试营业预存福利','vip.webp');const openNaming=()=>openSpecial('冠名定价','naming.webp');let closing=false;function closePoster(){if(closing)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){finishClose();return}closing=true;const panel=$('posterModal').querySelector('.poster-window');panel.classList.add('exiting');setTimeout(()=>{panel.classList.remove('exiting');finishClose();closing=false},280)}function finishClose(){$('posterModal').classList.add('hidden');lock(false);lastFocus?.focus?.()}
 async function copy(btn){const old=btn.innerHTML;try{await navigator.clipboard.writeText(contact);btn.textContent='已复制 ✓'}catch{btn.textContent='公众号：柒号社电竞俱乐部 / KOOK：0000007'}setTimeout(()=>btn.innerHTML=old,2600)}
