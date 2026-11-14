@@ -65,7 +65,7 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .card-popularity{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;padding-top:8px;border-top:1px solid #ffffff12}
 .card-popularity span{display:flex;align-items:center;gap:6px;color:#bba8b5;font-size:10px;letter-spacing:.4px;white-space:nowrap}
 .card-popularity i{font-style:normal;font-size:8px;color:#e98aae;border:1px solid #e98aae55;border-radius:20px;padding:2px 5px;letter-spacing:0}
-.card-popularity strong{color:#ff8db3;font:900 21px/1 Impact,Arial,sans-serif;letter-spacing:.7px;text-shadow:0 0 15px #f36b9d45;font-variant-numeric:tabular-nums}
+.card-popularity strong{color:#ff8db3;font:900 20px/1 Impact,Arial,sans-serif;letter-spacing:.35px;text-shadow:0 0 15px #f36b9d45;font-variant-numeric:tabular-nums;white-space:nowrap}
 .card-arrow{align-self:center}
 .popularity-note{margin:18px 0 0;padding:11px 14px;border-left:2px solid #d96f98;background:#ffffff08;color:#a99fa8;font-size:11px;line-height:1.7}
 .popularity-note strong{color:#e98aae;font-weight:800}
@@ -73,7 +73,7 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
  .card-popularity{margin-top:7px;padding-top:6px;gap:4px}
  .card-popularity span{font-size:8px;gap:4px}
  .card-popularity i{font-size:7px;padding:1px 4px}
- .card-popularity strong{font-size:17px}
+ .card-popularity strong{font-size:16px;letter-spacing:0}
  .popularity-note{font-size:10px;margin-top:13px;padding:9px 11px}
 }
 

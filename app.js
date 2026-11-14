@@ -17,15 +17,15 @@ const menus=[
 ['真·一命通关','趣味单','one-life.webp','标准 / PRO MAX'],
 ['S12赛季·微光 3×3价目表','3×3专区','s12-3x3.webp','33代做 / 33陪做']
 ];const $=id=>document.getElementById(id);let category='全部菜单',current=0,lastFocus=null,vipMode=false;const cats=['全部菜单','限时单','基础护航与体验单','趣味单','3×3专区'];const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
-const popularityBase=[680,958,745,585,520,630,495,465,570,655,975,540,610,505,720,440,485];
+const popularityBase=[4680,8958,6745,5585,4520,5630,4495,4465,5570,6655,9850,5540,6610,4505,7720,4440,4485];
 function popularityHash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function getPopularity(index){
  const start=new Date(2026,10,14);start.setHours(0,0,0,0);
  const today=new Date();today.setHours(0,0,0,0);
  const days=Math.max(0,Math.floor((today-start)/86400000));
  let value=popularityBase[index]??800;
- for(let day=1;day<=days&&value<999;day++)value+=1+(popularityHash(index+':'+day)%4);
- return Math.min(999,value);
+ for(let day=1;day<=days&&value<999;day++)value+=10+(popularityHash(index+':'+day)%31);
+ return Math.min(9999,value);
 }
 function render(){
  $('tabs').innerHTML=cats.map(c=>'<button class="tab '+(c===category?'active':'')+(c==='限时单'?' limited-tab':'')+'" data-cat="'+c+'" aria-pressed="'+(c===category)+'">'+(c==='限时单'?'🔥 ':'')+c+(c==='限时单'?' <small>HOT</small>':'')+'</button>').join('');
