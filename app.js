@@ -23,7 +23,7 @@ function render(){
  $('grid').innerHTML=visible.map(({m,i})=>{
   const number=m[1]==='趣味单'?menus.slice(0,i+1).filter(x=>x[1]==='趣味单').length:i+1;
   const streamer=m[2]==='delivery.webp';
-  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单"><div class="card-pic"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div><div class="card-bottom"><div><small>'+m[1]+' · '+m[3]+'</small><h3>'+m[0]+'</h3></div><b>↗</b></div></button>';
+  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单"><div class="card-pic"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+'<div class="card-bottom"><div><small>'+m[1]+' · '+m[3]+'</small><h3>'+m[0]+'</h3></div><b>↗</b></div></button>';
  }).join('');
  document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{category=b.dataset.cat;render()});
  document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>openPoster(Number(b.dataset.i)));

@@ -52,6 +52,9 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 @media(max-width:600px){.limited-feature{padding:20px 17px;flex-direction:column;align-items:stretch;gap:15px}.limited-feature:after{font-size:80px;right:-15px;top:-12px}.limited-copy strong{font-size:26px}.limited-cta{width:100%;text-align:center;padding:13px}}
 
 /* 主播同款标识：仅用于绝密快递站预览卡片 */
-.streamer-badge{position:absolute;top:18px;left:18px;z-index:3;padding:8px 13px;background:linear-gradient(110deg,#f05291,#ffc47d);color:#281019;border:1px solid #ffe4bd;font-size:12px;font-weight:950;letter-spacing:1px;box-shadow:0 5px 18px #0008;clip-path:polygon(0 0,92% 0,100% 28%,100% 100%,8% 100%,0 72%)}
+.streamer-card{overflow:visible;z-index:4}
+.streamer-card:hover{z-index:5}
+.streamer-card .streamer-badge{position:absolute;top:-16px;left:-14px;z-index:8;display:flex;align-items:center;gap:6px;padding:10px 17px 10px 14px;background:linear-gradient(120deg,#ff3d83 0%,#ff78a7 58%,#ffc27b 100%);color:#250b18;border:2px solid #fff0f5;font-size:14px;font-weight:1000;letter-spacing:1.5px;white-space:nowrap;box-shadow:0 5px 0 #a62c5c,0 10px 24px #0009,0 0 22px #ff4c91a6;clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%,5% 50%);transform:rotate(-7deg);transform-origin:left center}
+.streamer-card .streamer-badge:before{content:"✦";font-size:16px;color:#fff;text-shadow:0 1px 4px #9d2455}
 .streamer-card .card-number{top:58px}
-@media(max-width:600px){.streamer-badge{top:9px;left:9px;padding:6px 9px;font-size:10px}.streamer-card .card-number{top:40px}}
+@media(max-width:600px){.streamer-card .streamer-badge{top:-9px;left:-6px;padding:6px 10px 6px 8px;font-size:10px;letter-spacing:.5px;border-width:1px;gap:4px;box-shadow:0 3px 0 #a62c5c,0 7px 14px #0009}.streamer-card .streamer-badge:before{font-size:12px}.streamer-card .card-number{top:40px}}
