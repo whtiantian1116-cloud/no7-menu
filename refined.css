@@ -76,3 +76,12 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
  .card-popularity strong{font-size:17px}
  .popularity-note{font-size:10px;margin-top:13px;padding:9px 11px}
 }
+
+/* 董事长梅尔最爱：超级·小小巨人菜单专属角标 */
+.chairman-card{overflow:visible;z-index:4}
+.chairman-card:hover{z-index:5}
+.chairman-card .chairman-badge{position:absolute;top:-16px;left:-14px;z-index:8;display:flex;align-items:center;gap:6px;padding:10px 16px 10px 13px;background:linear-gradient(120deg,#ffe5a1 0%,#ffc76f 55%,#ff9b91 100%);color:#3b1b20;border:2px solid #fff4d9;font-size:12px;font-weight:1000;letter-spacing:.8px;white-space:nowrap;box-shadow:0 5px 0 #a65b45,0 10px 24px #0009,0 0 20px #ffc36b66;clip-path:polygon(0 0,94% 0,100% 50%,94% 100%,0 100%,5% 50%);transform:rotate(-7deg);transform-origin:left center}
+.chairman-card .chairman-badge:before{content:"✦";font-size:15px;color:#fff;text-shadow:0 1px 4px #a65b45}
+.chairman-card .card-number{top:58px}
+@media(max-width:600px){.chairman-card .chairman-badge{top:-9px;left:-6px;padding:6px 9px 6px 8px;font-size:9px;letter-spacing:.2px;border-width:1px;gap:4px;box-shadow:0 3px 0 #a65b45,0 7px 14px #0009}.chairman-card .chairman-badge:before{font-size:11px}.chairman-card .card-number{top:40px}}
+

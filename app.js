@@ -17,7 +17,7 @@ const menus=[
 ['真·一命通关','趣味单','one-life.webp','标准 / PRO MAX'],
 ['S12赛季·微光 3×3价目表','3×3专区','s12-3x3.webp','33代做 / 33陪做']
 ];const $=id=>document.getElementById(id);let category='全部菜单',current=0,lastFocus=null,vipMode=false;const cats=['全部菜单','限时单','基础护航与体验单','趣味单','3×3专区'];const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
-const popularityBase=[830,965,910,860,845,850,840,835,855,875,980,820,830,840,825,835,815];
+const popularityBase=[680,958,745,585,520,630,495,465,570,655,975,540,610,505,720,440,485];
 function popularityHash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function getPopularity(index){
  const start=new Date(2026,10,14);start.setHours(0,0,0,0);
@@ -33,7 +33,8 @@ function render(){
  $('grid').innerHTML=visible.map(({m,i})=>{
   const number=m[1]==='趣味单'?menus.slice(0,i+1).filter(x=>x[1]==='趣味单').length:i+1;
   const streamer=m[2]==='delivery.webp';
-  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单，人气值'+getPopularity(i)+'"><div class="card-pic"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+'<div class="card-bottom"><div class="card-main"><small>'+m[1]+' · '+m[3]+'</small><h3>'+m[0]+'</h3><div class="card-popularity"><span>人气值 <i>动态模拟</i></span><strong>'+getPopularity(i)+'</strong></div></div><b class="card-arrow">↗</b></div></button>';
+  const chairmanFavorite=m[2]==='giant.webp';
+  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+(chairmanFavorite?' chairman-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单，人气值'+getPopularity(i)+'"><div class="card-pic"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+(chairmanFavorite?'<div class="chairman-badge">董事长梅尔·最爱</div>':'')+'<div class="card-bottom"><div class="card-main"><small>'+m[1]+' · '+m[3]+'</small><h3>'+m[0]+'</h3><div class="card-popularity"><span>人气值 <i>动态模拟</i></span><strong>'+getPopularity(i)+'</strong></div></div><b class="card-arrow">↗</b></div></button>';
  }).join('');
  document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{category=b.dataset.cat;render()});
  document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>openPoster(Number(b.dataset.i)));
