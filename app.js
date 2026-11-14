@@ -16,7 +16,7 @@ const menus=[
 ['超级·小小巨人','趣味单','giant.webp','三档规格'],
 ['真·一命通关','趣味单','one-life.webp','标准 / PRO MAX'],
 ['S12赛季·微光 3×3价目表','3×3专区','s12-3x3.webp','33代做 / 33陪做']
-];const $=id=>document.getElementById(id);let category='全部菜单',current=0,lastFocus=null,vipMode=false;const cats=['全部菜单','限时单','基础护航与体验单','趣味单','3×3专区'];const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2];
+];const $=id=>document.getElementById(id);let category='全部菜单',current=0,lastFocus=null,vipMode=false;const cats=['全部菜单','限时单','基础护航与体验单','趣味单','3×3专区'];const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
 function render(){
  $('tabs').innerHTML=cats.map(c=>'<button class="tab '+(c===category?'active':'')+(c==='限时单'?' limited-tab':'')+'" data-cat="'+c+'" aria-pressed="'+(c===category)+'">'+(c==='限时单'?'🔥 ':'')+c+(c==='限时单'?' <small>HOT</small>':'')+'</button>').join('');
  const visible=menus.map((m,i)=>({m,i})).filter(x=>category==='全部菜单'||x.m[1]===category);
