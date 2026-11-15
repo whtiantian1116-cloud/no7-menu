@@ -85,3 +85,11 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .chairman-card .card-number{top:58px}
 @media(max-width:600px){.chairman-card .chairman-badge{top:-9px;left:-6px;padding:6px 9px 6px 8px;font-size:9px;letter-spacing:.2px;border-width:1px;gap:4px;box-shadow:0 3px 0 #a65b45,0 7px 14px #0009}.chairman-card .chairman-badge:before{font-size:11px}.chairman-card .card-number{top:40px}}
 
+
+/* 百格红大挑战：卡片左上角外挂 NEW 角标 */
+.new-card{position:relative;overflow:visible;z-index:4}
+.new-card:hover{z-index:5}
+.new-card .new-badge{position:absolute;z-index:9;top:-15px;left:-13px;display:flex;align-items:center;gap:7px;padding:9px 17px;background:linear-gradient(120deg,#fff0a7 0%,#ffc45c 45%,#fb7653 100%);border:2px solid #fff6db;color:#4c1b17;box-shadow:0 5px 0 #a65338,0 12px 28px #0009;transform:rotate(-8deg);font:1000 17px/1 Arial,sans-serif;letter-spacing:1px;clip-path:polygon(0 0,93% 0,100% 50%,93% 100%,0 100%,5% 50%);pointer-events:none}
+.new-card .new-badge span{font-size:10px;letter-spacing:0}
+.new-card .card-number{top:55px}
+@media(max-width:600px){.new-card .new-badge{top:-9px;left:-7px;gap:4px;padding:6px 10px;font-size:12px;border-width:1px;box-shadow:0 3px 0 #a65338,0 6px 14px #0008}.new-card .new-badge span{font-size:8px}.new-card .card-number{top:39px}}
