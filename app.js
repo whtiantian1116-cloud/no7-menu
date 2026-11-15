@@ -6,7 +6,6 @@ const menus=[
 ['左轮一响，黄金万两','趣味单','revolver.webp','六发定乾坤 · 327R 起'],
 ['神偷沙色','趣味单','sand.webp','巴别塔夺金行动'],
 ['百亿补贴','趣味单','billion.webp','477 / 577 包亿'],
-['药药切克闹','趣味单','medicine.webp','止疼药挑战 · 477R 起'],
 ['黄金矿工','趣味单','gold-miner.webp','青铜 / 白银 / 黄金'],
 ['板板步步高升','趣味单','step.webp','逐级挑战'],
 ['绝密快递站','趣味单','delivery.webp','绝密配送 · 包裹挑战'],
@@ -17,7 +16,7 @@ const menus=[
 ['真·一命通关','趣味单','one-life.webp','标准 / PRO MAX'],
 ['S12赛季·微光 3×3价目表','3×3专区','s12-3x3.webp','33代做 / 33陪做']
 ];const $=id=>document.getElementById(id);let category='全部菜单',current=0,lastFocus=null,vipMode=false;const cats=['全部菜单','限时单','基础护航与体验单','趣味单','3×3专区'];const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
-const popularityBase=[4680,8958,6745,5585,4520,5630,4495,4465,5570,6655,9850,5540,6610,4505,7720,4440,4485];
+const popularityBase=[4680,8958,6745,5585,4520,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
 function popularityHash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function getPopularity(index){
  const start=new Date(2026,10,14);start.setHours(0,0,0,0);
