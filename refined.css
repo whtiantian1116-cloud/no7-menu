@@ -150,3 +150,23 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
  .menu-cards.grid,.menu-category-section.featured .menu-cards.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .menu-category-section .card-bottom{padding:11px 9px 13px}
 }
+
+/* 主推升级：护航猛攻作为第一视觉入口 */
+.assault-feature{border:1px solid #ffb7d5;background:radial-gradient(ellipse at 86% 10%,#fa8db034,transparent 53%),linear-gradient(112deg,#6a294d,#371b36 63%,#241624);box-shadow:0 16px 48px #dc5e9332,inset 0 0 0 1px #ffd8e326}
+.assault-feature:after{content:"FIRST PICK";font-size:clamp(64px,8vw,120px);right:2%;top:-13px;transform:skew(-9deg);color:#ffffff0b}
+.assault-feature .limited-eyebrow{color:#ffddae}
+.assault-feature .limited-copy strong{color:#fff3f8;font-weight:1000}
+.assault-feature .limited-copy>span:last-child{color:#f4c5dc}
+.assault-feature .limited-cta{background:linear-gradient(105deg,#ffe3a3,#ffb8d3);border:1px solid #ffecdd;color:#452039;box-shadow:0 5px 0 #b4638370;white-space:normal}
+.category-tile.assault.featured{border:2px solid #ffbcda;background:radial-gradient(circle at 95% 20%,#ffbac543,transparent 55%),linear-gradient(120deg,#762f57,#4a2446 70%,#341e38);box-shadow:0 0 0 1px #ffe3ef20,0 15px 43px #f46d9b31}
+.category-tile.assault.featured:before{content:"★  柒号社主推";position:absolute;right:0;bottom:0;background:linear-gradient(105deg,#ffe2aa,#ffc1d2);padding:6px 16px;color:#56223d;font-size:10px;font-weight:900;letter-spacing:1px;z-index:2;border-radius:12px 0 0 0}
+.category-tile.assault.featured .category-tile-top em{background:#ffe1ac;color:#652649;border:1px solid #fff0c4}
+.category-tile.assault.featured>strong{color:#fff1f7;text-shadow:0 4px 22px #ff9dc867}
+.category-tile.assault.featured .category-tile-footer{padding-right:0;color:#ffe0ec}
+.category-tile.assault.featured .category-tile-footer b{font-size:14px;background:#ffffff28;border-radius:999px;padding:7px 11px;white-space:nowrap}
+.category-tile.season.featured{border:1px solid #9f6c6170;background:linear-gradient(120deg,#45272a,#261b25);box-shadow:none}
+.category-tile.season.featured .category-tile-top em{background:#ffffff13;color:#f6cfc9}
+.menu-category-section.assault.featured{border:1px solid #ffadcf8c;border-top:4px solid #ffbfda;background:linear-gradient(140deg,#2f1e2f,#19121d 70%);box-shadow:0 14px 55px #ef72ab15}
+.menu-category-section.assault .menu-category-head h3{color:#ffd0e4}
+.menu-category-section.assault .category-kicker{color:#ffb8d4}
+@media(max-width:600px){.assault-feature{padding:20px 17px}.assault-feature:after{font-size:63px;right:-12px;top:1px}.category-tile.assault.featured:before{font-size:8px;padding:4px 8px}.category-tile.assault.featured .category-tile-footer b{font-size:10px;padding:5px 6px}.category-tile.assault.featured{border-width:1px}}
