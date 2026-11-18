@@ -1,6 +1,9 @@
 const menus=[
 ['限时·夺取大红砖','限时单','limited-redbrick.webp','11.12—11.26 · 限定活动'],
 ['试营业·超值体验单','护航猛攻单','limited-experience.webp','127R 起 · 每版本每周限一单'],
+['重生之摊牌啦！我是满级大佬','护航猛攻单','max-level.webp','498R · 基础保底1200W'],
+['柒号社·小时陪玩单','护航猛攻单','hourly.webp','小时陪玩 · 多档等级'],
+['绝对清图单','护航猛攻单','clear-map.webp','277R 起 · 清图专场'],
 ['护航猛攻单','护航猛攻单','basic.webp','基础体验 · 小时陪玩'],
 ['唐王骰子','趣味单','dice.webp','骰子摇摇摇'],
 ['左轮一响，黄金万两','趣味单','revolver.webp','六发定乾坤 · 327R 起'],
@@ -25,7 +28,7 @@ const categoryGroups=[
  {name:'3×3专区',key:'3×3专区',id:'three-missions',number:'04',en:'3×3 SPECIAL',desc:'赛季任务 · 专项挑战',tone:'three',feature:false}
 ];
 const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
-const popularityBase=[4680,8958,6745,5585,4520,6180,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
+const popularityBase=[4680,8958,8950,8700,8600,6745,5585,4520,6180,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
 function popularityHash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function getPopularity(index){
  const start=new Date(2026,10,14);start.setHours(0,0,0,0);
@@ -39,7 +42,7 @@ function menuCard(m,i){
  const number=m[1]==='趣味单'?menus.slice(0,i+1).filter(x=>x[1]==='趣味单').length:i+1;
  const streamer=m[2]==='delivery.webp';
  const chairmanFavorite=m[2]==='giant.webp';
- const isNew=m[2]==='hundred-red.webp';
+ const isNew=['max-level.webp','hourly.webp','clear-map.webp'].includes(m[2]) || m[2]==='hundred-red.webp';
  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+(chairmanFavorite?' chairman-card':'')+(isNew?' new-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单，人气值'+getPopularity(i)+'"><div class="card-pic '+'"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+(chairmanFavorite?'<div class="chairman-badge">董事长梅尔·最爱</div>':'')+(isNew?'<div class="new-badge">NEW <span>上新</span></div>':'')+'<div class="card-bottom"><div class="card-main"><small>'+ (m[1]==='限时单'?'赛季限时单':m[1]) +' · '+m[3]+'</small><h3>'+m[0]+'</h3><div class="card-popularity"><span>人气值 <i>动态模拟</i></span><strong>'+getPopularity(i)+'</strong></div></div><b class="card-arrow">↗</b></div></button>';
 }
 function render(){
