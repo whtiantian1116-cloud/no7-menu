@@ -1,6 +1,6 @@
 const menus=[
 ['限时·夺取大红砖','限时单','limited-redbrick.webp','11.12—11.26 · 限定活动'],
-['试营业·超值体验单','护航猛攻单','trial-experience-card.webp','127R 起 · 每版本每周限一单','limited-experience.webp'],
+['试营业·超值体验单','护航猛攻单','limited-experience.webp','127R 起 · 每版本每周限一单'],
 ['护航猛攻单','护航猛攻单','basic.webp','基础体验 · 小时陪玩'],
 ['唐王骰子','趣味单','dice.webp','骰子摇摇摇'],
 ['左轮一响，黄金万两','趣味单','revolver.webp','六发定乾坤 · 327R 起'],
@@ -40,8 +40,7 @@ function menuCard(m,i){
  const streamer=m[2]==='delivery.webp';
  const chairmanFavorite=m[2]==='giant.webp';
  const isNew=m[2]==='hundred-red.webp';
- const experience=m[2]==='trial-experience-card.webp';
- return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+(chairmanFavorite?' chairman-card':'')+(isNew?' new-card':'')+(experience?' experience-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单，人气值'+getPopularity(i)+'"><div class="card-pic '+(experience?'experience-card-pic':'')+'"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+(chairmanFavorite?'<div class="chairman-badge">董事长梅尔·最爱</div>':'')+(isNew?'<div class="new-badge">NEW <span>上新</span></div>':'')+'<div class="card-bottom"><div class="card-main"><small>'+ (m[1]==='限时单'?'赛季限时单':m[1]) +' · '+m[3]+'</small><h3>'+m[0]+'</h3><div class="card-popularity"><span>人气值 <i>动态模拟</i></span><strong>'+getPopularity(i)+'</strong></div></div><b class="card-arrow">↗</b></div></button>';
+ return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+(chairmanFavorite?' chairman-card':'')+(isNew?' new-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单，人气值'+getPopularity(i)+'"><div class="card-pic '+'"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+(chairmanFavorite?'<div class="chairman-badge">董事长梅尔·最爱</div>':'')+(isNew?'<div class="new-badge">NEW <span>上新</span></div>':'')+'<div class="card-bottom"><div class="card-main"><small>'+ (m[1]==='限时单'?'赛季限时单':m[1]) +' · '+m[3]+'</small><h3>'+m[0]+'</h3><div class="card-popularity"><span>人气值 <i>动态模拟</i></span><strong>'+getPopularity(i)+'</strong></div></div><b class="card-arrow">↗</b></div></button>';
 }
 function render(){
  $('tabs').innerHTML=categoryGroups.map((g,i)=>'<button type="button" class="category-tile '+g.tone+(g.feature?' featured':'')+'" data-target="'+g.id+'" aria-label="跳转到'+g.name+'"><span class="category-tile-top"><b>0'+(i+1)+' / '+g.en+'</b><em>'+(g.tone==='assault'?'主推首选':g.feature?'赛季限时':'探索专区')+'</em></span><strong>'+g.name+'</strong><span class="category-tile-footer">'+g.desc+' <b>'+(g.tone==='assault'?'立即查看 ↗':'↗')+'</b></span></button>').join('');
