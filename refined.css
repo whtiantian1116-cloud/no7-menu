@@ -170,3 +170,70 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .menu-category-section.assault .menu-category-head h3{color:#ffd0e4}
 .menu-category-section.assault .category-kicker{color:#ffb8d4}
 @media(max-width:600px){.assault-feature{padding:20px 17px}.assault-feature:after{font-size:63px;right:-12px;top:1px}.category-tile.assault.featured:before{font-size:8px;padding:4px 8px}.category-tile.assault.featured .category-tile-footer b{font-size:10px;padding:5px 6px}.category-tile.assault.featured{border-width:1px}}
+
+/* V7：四个专区，四种具有辨识度的主题语言 */
+.category-nav-intro{gap:8px 14px;margin:38px 0 20px;align-items:center}
+.category-nav-intro>span{width:100%;color:#b9aeb9;font-size:10px;letter-spacing:3px}
+.category-nav-intro>strong{color:#fff4f1;font-size:clamp(24px,2.7vw,32px);letter-spacing:-.5px}
+.category-nav-intro>p{color:#e9cbd9;font-size:13px;line-height:1.8}
+.category-tiles{gap:18px}
+.category-tile{min-height:195px;padding:27px 29px;border-radius:5px;isolation:isolate;box-shadow:0 15px 37px #0005}
+.category-tile:before{pointer-events:none}
+.category-tile.assault.featured{background:linear-gradient(116deg,#151e28 5%,#293543 55%,#151b26);border:1px solid #9faeb9;box-shadow:0 18px 48px #0009,0 0 0 1px #dee5e521}
+.category-tile.assault.featured:after{content:"07";color:#e9edf013;right:10px;bottom:-40px;font:italic 900 160px/1 Impact,Arial,sans-serif;transform:skew(-12deg)}
+.category-tile.assault.featured:before{content:"★  柒号社主推";top:0;bottom:auto;right:0;border-radius:0 0 0 5px;padding:8px 15px;background:linear-gradient(95deg,#d5c8b2,#e4dacb);color:#192431;letter-spacing:1px}
+.category-tile.assault.featured>strong{color:#f4f6f7;text-shadow:0 6px 24px #0009;letter-spacing:-1.6px}
+.category-tile.assault.featured .category-tile-top em{background:#d3dce0;color:#192936;border-color:#d3dce0}
+.category-tile.assault.featured .category-tile-footer{color:#cfdae1}
+.category-tile.assault.featured .category-tile-footer b{background:#d7dfe5;color:#182632;border-radius:3px;font-size:12px;font-weight:900;padding:10px 12px}
+.category-tile.season.featured{background:radial-gradient(circle at 90% 10%,#b8864940,transparent 54%),linear-gradient(120deg,#50312f,#302028);border:1px solid #b99677;box-shadow:0 14px 36px #07040580}
+.category-tile.season.featured:after{content:"✦";font:900 145px/1 Georgia,serif;color:#f2c78423;right:14px;bottom:-44px;transform:rotate(-15deg)}
+.category-tile.season.featured>strong{color:#ffdfb0}
+.category-tile.season.featured .category-tile-top em{background:#92714e55;color:#ffe2bc;border-color:#ddbb92a6}
+.category-tile.season.featured .category-tile-footer{color:#eed2b3}
+.category-tile.fun{background:radial-gradient(circle at 83% 17%,#f8d0c45a,transparent 38%),linear-gradient(135deg,#634c65,#3a324b 87%);border:1px solid #bb98c1;box-shadow:0 13px 36px #210e2480}
+.category-tile.fun:after{content:"✿";font:900 156px/1 Georgia,serif;color:#ffd6f03d;right:2px;bottom:-46px;transform:rotate(-16deg)}
+.category-tile.fun:before{content:"✦";position:absolute;right:27%;top:52px;font:900 31px Georgia,serif;color:#ffdab8bf;transform:rotate(18deg)}
+.category-tile.fun>strong{color:#ffe2ef;transform:rotate(-2deg);transform-origin:left center;text-shadow:0 4px 15px #230b299c}
+.category-tile.fun .category-tile-top em{background:#e1c1e4;color:#3b2941;border-color:#f3deec}
+.category-tile.fun .category-tile-footer{color:#f1daeb}
+.category-tile.three{background:linear-gradient(120deg,#153b42,#1d3140 70%,#192533);border:1px solid #6fabb0;box-shadow:0 14px 36px #0618208a}
+.category-tile.three:after{content:"3×3";font:900 99px/1 Impact,Arial,sans-serif;letter-spacing:-4px;color:#ade8eb19;right:-5px;bottom:-10px;transform:rotate(-8deg)}
+.category-tile.three:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 34px,#b1e2e00d 35px 36px),repeating-linear-gradient(0deg,transparent 0 34px,#b1e2e00d 35px 36px);mask-image:linear-gradient(to left,#000,transparent 85%)}
+.category-tile.three>strong{color:#d7f3f4}
+.category-tile.three .category-tile-top em{background:#b4dede;color:#163741;border-color:#dbf2ed}
+.category-tile.three .category-tile-footer{color:#c7e1e4}
+/* 下方各专区内容与入口主题保持统一 */
+.menu-category-section{border-radius:5px}
+.menu-category-section.assault.featured{background:linear-gradient(140deg,#27313e,#171d29 58%,#111722);border:1px solid #788b99;border-top:4px solid #ced6d7;box-shadow:0 24px 70px #0005}
+.menu-category-section.assault .menu-category-head h3{color:#edf1f4}
+.menu-category-section.assault .category-kicker,.menu-category-section.assault .category-quantity{color:#bfd3dc}
+.menu-category-section.assault.featured .card{border-color:#8095a06b}
+.menu-category-section.season.featured{background:linear-gradient(145deg,#45302f,#211d25 58%,#18151e);border:1px solid #907355;border-top:4px solid #d7a978}
+.menu-category-section.season .menu-category-head h3,.menu-category-section.season .category-quantity{color:#f1d4a9}
+.menu-category-section.season .category-kicker{color:#dabb94}
+.menu-category-section.fun{background:radial-gradient(circle at 95% 3%,#e4b6d523,transparent 45%),linear-gradient(145deg,#32283c,#191820 70%);border:1px solid #907698;border-top:4px solid #d9b0db}
+.menu-category-section.fun .menu-category-head h3,.menu-category-section.fun .category-quantity{color:#f0cde9}
+.menu-category-section.fun .category-kicker{color:#debee4}
+.menu-category-section.three{background:linear-gradient(145deg,#1b363e,#14202b 65%);border:1px solid #64808c;border-top:4px solid #95c8cc}
+.menu-category-section.three .menu-category-head h3,.menu-category-section.three .category-quantity{color:#c2e8e7}
+.menu-category-section.three .category-kicker{color:#add5dc}
+/* 主推横幅同步改为冷银色帅气路线 */
+.assault-feature{background:linear-gradient(112deg,#273441,#1b2632 73%,#141c25);border-color:#abb6bb;box-shadow:0 14px 40px #0007}
+.assault-feature:after{content:"07";color:#ffffff0b;top:-10px;font:italic 900 150px/1 Impact,Arial,sans-serif}
+.assault-feature .limited-eyebrow{color:#d5dfdf}
+.assault-feature .limited-copy strong{color:#f3f5f7}
+.assault-feature .limited-copy>span:last-child{color:#ced5df}
+.assault-feature .limited-cta{background:linear-gradient(105deg,#cbd6da,#e5dac7);border-color:#edf4ef;color:#1e2e3a;box-shadow:0 5px 0 #17202d}
+@media(max-width:600px){
+.category-nav-intro{margin:27px 0 16px;gap:5px}.category-nav-intro>strong{font-size:22px}.category-nav-intro>p{font-size:11px;line-height:1.65;width:100%}
+.category-tiles{gap:10px;row-gap:12px}.category-tile{min-height:148px;padding:15px 12px}
+.category-tile.assault.featured:before{font-size:7px;padding:5px 7px}
+.category-tile.assault.featured:after{font-size:108px;bottom:-20px}
+.category-tile.season.featured:after,.category-tile.fun:after{font-size:105px;bottom:-23px;right:-6px}
+.category-tile.fun:before{font-size:20px;top:49px}
+.category-tile.three:after{font-size:65px;bottom:8px}
+.category-tile>strong{font-size:clamp(19px,5vw,25px)}
+.category-tile.assault.featured .category-tile-footer b{font-size:9px;padding:6px}
+.category-tile-footer{font-size:9px}.assault-feature:after{font-size:96px}
+}

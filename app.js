@@ -19,10 +19,10 @@ const menus=[
 ];const $=id=>document.getElementById(id);let current=0,lastFocus=null,vipMode=false;
 const cats=['赛季限时单','护航猛攻单','趣味单','3×3专区'];
 const categoryGroups=[
- {name:'护航猛攻单',key:'护航猛攻单',id:'assault-missions',number:'01',en:'ASSAULT SUPPORT',desc:'技术陪玩 · 基础体验与猛攻服务',tone:'assault',feature:true},
- {name:'赛季限时单',key:'限时单',id:'season-missions',number:'02',en:'SEASON LIMITED',desc:'赛季特别企划 · 限时玩法',tone:'season',feature:true},
- {name:'趣味单',key:'趣味单',id:'fun-missions',number:'03',en:'FUN MISSIONS',desc:'新奇玩法 · 花样挑战',tone:'fun',feature:false},
- {name:'3×3专区',key:'3×3专区',id:'three-missions',number:'04',en:'3×3 SPECIAL',desc:'赛季微光 · 3×3专题',tone:'three',feature:false}
+ {name:'护航猛攻单',key:'护航猛攻单',id:'assault-missions',number:'01',en:'ASSAULT SUPPORT',desc:'帅气出击 · 默契配合与细致服务',tone:'assault',feature:true},
+ {name:'赛季限时单',key:'限时单',id:'season-missions',number:'02',en:'SEASON LIMITED',desc:'限定企划 · 发现本季惊喜',tone:'season',feature:true},
+ {name:'趣味单',key:'趣味单',id:'fun-missions',number:'03',en:'FUN MISSIONS',desc:'奇怪的快乐 · 脑洞大开',tone:'fun',feature:false},
+ {name:'3×3专区',key:'3×3专区',id:'three-missions',number:'04',en:'3×3 SPECIAL',desc:'赛季任务 · 专项挑战',tone:'three',feature:false}
 ];
 const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
 const popularityBase=[4680,8958,6745,5585,4520,6180,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
