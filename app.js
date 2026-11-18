@@ -26,7 +26,7 @@ const categoryGroups=[
  {name:'趣味单',key:'趣味单',id:'fun-missions',number:'03',en:'FUN MISSIONS',desc:'奇怪的快乐 · 脑洞大开',tone:'fun',feature:false},
  {name:'3×3专区',key:'3×3专区',id:'three-missions',number:'04',en:'3×3 SPECIAL',desc:'赛季任务 · 专项挑战',tone:'three',feature:false}
 ];
-const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const imageVersions={'max-level.webp':'20261118-image-repair','hourly.webp':'20261118-image-repair','clear-map.webp':'20261118-image-repair'};const img=m=>'./assets/'+m[2]+(imageVersions[m[2]]?'?v='+imageVersions[m[2]]:m[2]==='delivery.webp'?'?v=20261114':'');
+const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const imageVersions={'max-level.webp':'20261118-webp-repaired','hourly.webp':'20261118-webp-repaired','clear-map.webp':'20261118-webp-repaired'};const img=m=>'./assets/'+m[2]+(imageVersions[m[2]]?'?v='+imageVersions[m[2]]:m[2]==='delivery.webp'?'?v=20261114':'');
 const popularityBase=[4680,8700,8958,8950,8600,6745,5585,4520,6180,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
 function popularityHash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function getPopularity(index){
