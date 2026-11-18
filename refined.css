@@ -285,3 +285,12 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .experience-card:hover .experience-card-pic img{filter:none!important;transform:none!important}
 .experience-card .experience-card-pic:after,.experience-card .card-number,.experience-card .card-hover,.experience-card .card-bottom{display:none!important}
 @media(max-width:600px){.experience-card{padding:6px}.experience-card:before{top:-6px;left:22px;width:48px;height:14px}}
+
+
+/* 首页团队合影：纸质照片贴纸效果，保留原图完整构图 */
+.hero-character{aspect-ratio:460/375;border:0!important;border-radius:0!important;box-shadow:0 28px 70px #0009!important;overflow:visible!important;background:transparent!important;transform:rotate(-2deg)}
+.hero-character img{display:block;object-fit:contain!important;object-position:center!important;filter:none!important}
+.hero-character:before{content:"";position:absolute;z-index:3;top:-12px;left:42%;width:78px;height:22px;background:linear-gradient(135deg,#f4e8d4e8,#dfcdb5e8);border:1px solid #fff7;box-shadow:0 2px 8px #0005;transform:rotate(-7deg);pointer-events:none}
+.hero-character:after{content:none!important;display:none!important}
+.hero-character-label{display:none!important}
+@media(max-width:600px){.hero-character{aspect-ratio:460/375;transform:rotate(5deg)}}
