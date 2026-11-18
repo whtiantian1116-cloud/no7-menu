@@ -1,8 +1,8 @@
 const menus=[
 ['限时·夺取大红砖','限时单','limited-redbrick.webp','11.12—11.26 · 限定活动'],
+['柒号社·小时陪玩单','护航猛攻单','hourly.webp','小时陪玩 · 多档等级'],
 ['试营业·超值体验单','护航猛攻单','limited-experience.webp','127R 起 · 每版本每周限一单'],
 ['重生之摊牌啦！我是满级大佬','护航猛攻单','max-level.webp','498R · 基础保底1200W'],
-['柒号社·小时陪玩单','护航猛攻单','hourly.webp','小时陪玩 · 多档等级'],
 ['绝对清图单','护航猛攻单','clear-map.webp','277R 起 · 清图专场'],
 ['唐王骰子','趣味单','dice.webp','骰子摇摇摇'],
 ['左轮一响，黄金万两','趣味单','revolver.webp','六发定乾坤 · 327R 起'],
@@ -26,8 +26,8 @@ const categoryGroups=[
  {name:'趣味单',key:'趣味单',id:'fun-missions',number:'03',en:'FUN MISSIONS',desc:'奇怪的快乐 · 脑洞大开',tone:'fun',feature:false},
  {name:'3×3专区',key:'3×3专区',id:'three-missions',number:'04',en:'3×3 SPECIAL',desc:'赛季任务 · 专项挑战',tone:'three',feature:false}
 ];
-const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const img=m=>'./assets/'+m[2]+(m[2]==='delivery.webp'?'?v=20261114':'');
-const popularityBase=[4680,8958,8950,8700,8600,6745,5585,4520,6180,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
+const contact='微信公众号：柒号社电竞俱乐部\nKOOK：0000007';const imageVersions={'max-level.webp':'20261118-image-repair','hourly.webp':'20261118-image-repair','clear-map.webp':'20261118-image-repair'};const img=m=>'./assets/'+m[2]+(imageVersions[m[2]]?'?v='+imageVersions[m[2]]:m[2]==='delivery.webp'?'?v=20261114':'');
+const popularityBase=[4680,8700,8958,8950,8600,6745,5585,4520,6180,5630,4495,5570,6655,9850,5540,6610,4505,7720,4440,4485];
 function popularityHash(value){let h=2166136261;for(let i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function getPopularity(index){
  const start=new Date(2026,10,14);start.setHours(0,0,0,0);
