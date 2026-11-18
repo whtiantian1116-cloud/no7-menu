@@ -286,3 +286,38 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
 .hero-character:after{content:none!important;display:none!important}
 .hero-character-label{display:none!important}
 @media(max-width:600px){.hero-character{aspect-ratio:460/375;transform:rotate(5deg)}}
+
+/* Mission heading — compact and quiet, let menu cards lead */
+.section-title{
+  align-items:flex-end;
+  gap:28px;
+  margin-bottom:26px;
+  padding-bottom:19px;
+  border-bottom:1px solid #ffffff18;
+}
+.section-title h2{
+  font-size:clamp(38px,4.2vw,54px);
+  line-height:1.05;
+  letter-spacing:-.055em;
+  margin:0;
+  font-weight:950;
+}
+.section-title p{
+  max-width:820px;
+  margin:0 0 3px;
+  color:#a99eac;
+  font-size:12px;
+  line-height:1.75;
+  letter-spacing:.15px;
+}
+.section-title .overline,
+.section-title .count{display:none!important}
+@media(max-width:600px){
+  .section-title{
+    display:block;
+    margin-bottom:19px;
+    padding-bottom:14px;
+  }
+  .section-title h2{font-size:36px;line-height:1.08}
+  .section-title p{font-size:11px;line-height:1.65;margin:7px 0 0}
+}
