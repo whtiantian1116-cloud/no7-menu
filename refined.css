@@ -274,3 +274,14 @@ body{background:radial-gradient(ellipse 80% 40% at 50% 23%,#201923 0%,transparen
  .season-countdown-value{font-size:10px}
  .season-countdown-value b{font-size:25px}
 }
+
+
+/* 试营业·超值体验单：保留用户提供的完整卡片图，作为贴纸照片展示 */
+.experience-card{padding:8px;background:linear-gradient(145deg,#2a1b29,#151219);border:1px solid #c77e9c;box-shadow:0 18px 42px #0008,0 0 0 1px #f4c2d51c;transform:rotate(-.45deg);overflow:visible}
+.experience-card:hover{transform:translateY(-6px) rotate(0deg);border-color:#f0a6c2;box-shadow:0 25px 50px #0009,0 0 0 1px #f4c2d544}
+.experience-card:before{content:"";position:absolute;z-index:7;top:-8px;left:30px;width:66px;height:19px;background:#eadcc8d9;border:1px solid #fff4e6;box-shadow:0 2px 7px #0005;transform:rotate(-7deg);pointer-events:none}
+.experience-card .experience-card-pic{height:auto!important;aspect-ratio:401/510;overflow:hidden;background:#17131a;border:1px solid #d28aa5}
+.experience-card .experience-card-pic img{position:relative!important;display:block;width:100%;height:100%;object-fit:fill;filter:none!important;transform:none!important;transition:none!important}
+.experience-card:hover .experience-card-pic img{filter:none!important;transform:none!important}
+.experience-card .experience-card-pic:after,.experience-card .card-number,.experience-card .card-hover,.experience-card .card-bottom{display:none!important}
+@media(max-width:600px){.experience-card{padding:6px}.experience-card:before{top:-6px;left:22px;width:48px;height:14px}}
