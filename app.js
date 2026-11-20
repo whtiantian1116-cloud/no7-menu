@@ -41,7 +41,7 @@ function menuCard(m,i){
  const number=m[1]==='趣味单'?menus.slice(0,i+1).filter(x=>x[1]==='趣味单').length:i+1;
  const streamer=m[2]==='delivery.webp';
  const chairmanFavorite=m[2]==='giant.webp';
- const isNew=['max-level.webp','hourly.webp','clear-map.webp'].includes(m[2]) || m[2]==='hundred-red.webp';
+ const isNew=['max-level.webp','hourly.webp','clear-map.webp','classified-escort.webp'].includes(m[2]) || m[2]==='hundred-red.webp';
  return '<button class="card '+(m[1]==='限时单'?'limited-card ':'')+(streamer?'streamer-card':'')+(chairmanFavorite?' chairman-card':'')+(isNew?' new-card':'')+'" data-i="'+i+'" aria-label="查看'+m[0]+'完整菜单，人气值'+getPopularity(i)+'"><div class="card-pic '+'"><img loading="lazy" src="'+img(m)+'" alt="'+m[0]+'正式海报">'+'<div class="card-number"><b>'+(m[1]==='限时单'?'LIMITED TIME':'MISSION')+'</b> / '+String(number).padStart(2,'0')+'</div><div class="card-hover">展开完整菜单 <b>↗</b></div></div>'+(streamer?'<div class="streamer-badge">主播同款</div>':'')+(chairmanFavorite?'<div class="chairman-badge">董事长梅尔·最爱</div>':'')+(isNew?'<div class="new-badge">NEW <span>上新</span></div>':'')+'<div class="card-bottom"><div class="card-main"><small>'+ (m[1]==='限时单'?'赛季限时单':m[1]) +' · '+m[3]+'</small><h3>'+m[0]+'</h3><div class="card-popularity"><span>人气值 <i>动态模拟</i></span><strong>'+getPopularity(i)+'</strong></div></div><b class="card-arrow">↗</b></div></button>';
 }
 function render(){
